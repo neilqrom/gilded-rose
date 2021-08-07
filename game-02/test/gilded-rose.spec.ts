@@ -1,5 +1,6 @@
 import { expect } from 'chai';
-import { Item, GildedRose } from '../app/gilded-rose';
+import { GildedRose } from '../app/gilded-rose';
+import { Item } from '../app/item';
 
 describe('Gilded Rose', function () {
 
@@ -232,7 +233,7 @@ describe('Gilded Rose', function () {
                 const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 10, -1) ]);
 
                 const $item = gildedRose.tick()[0];
-
+                console.log($item.quality);
                 expect($item.quality).to.equal(0);
                 expect($item.sellIn).to.equal(-2);
             });
